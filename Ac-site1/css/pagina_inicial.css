@@ -1,0 +1,65 @@
+body {
+    /* O padding para o rodapé fixo precisa estar no CSS específico da página */
+    padding-bottom: 100px; 
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: calc(100vh - 100px);
+}
+
+.welcome-text {
+    font-size: 3em; /* Um pouco maior para a fonte Poppins */
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    font-weight: 400;
+    text-align: center;
+    max-width: 500px;
+    color: var(--text-color);
+    margin-top: 0;
+}
+
+.couple-photo {
+    margin-top: 40px;
+    max-width: 90%;
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: var(--subtle-shadow);
+}
+
+.footer {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.footer a {
+    color: white;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: var(--accent-green);
+}

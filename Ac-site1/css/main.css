@@ -1,0 +1,35 @@
+/* Define as variáveis de cor para serem usadas em todo o site */
+:root {
+    --primary-green: #2C5F2D;
+    --accent-green: #97BC62;
+    --background-color: #FCFBF4;
+    --text-color: #333333;
+    --card-background: #FFFFFF;
+    --subtle-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos globais aplicados a todo o site */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para os cabeçalhos */
+h1, h2, h3 {
+   font-family: 'Poppins', sans-serif;
+    color: var(--primary-green);
+}
+
+/* Estilo padrão para links */
+a {
+    color: var(--accent-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-green);
+}

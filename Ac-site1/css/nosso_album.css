@@ -1,0 +1,23 @@
+.header h1 {
+    font-weight: 600;
+}
+
+
+
+.photo-card {
+    box-shadow: var(--subtle-shadow);
+    background-color: var(--card-background);
+}
+
+.photo-grid {
+    padding: 20px;
+}
+
+.delete-btn {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Modal continua com fundo escuro, mas o botão usa a cor de destaque */
+.modal-close-btn:hover, .modal-nav-btn:hover {
+    color: var(--accent-green);
+}
