@@ -1,0 +1,334 @@
+/* static/css/main.css */
+
+/* --- 1. CONFIGURAÇÃO GLOBAL E FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@300;600&display=swap');
+
+:root {
+    --primary-green: #2C5F2D;
+    --accent-green: #97BC62;
+    --background-color: #FCFBF4;
+    --text-color: #333333;
+    --card-background: #FFFFFF;
+    --subtle-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    background-color: var(--background-color) !important;
+    color: var(--text-color);
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 120px; /* Espaço para o rodapé maior */
+}
+
+/* --- 2. SOBRESCRITA DE ESTILOS GERAIS --- */
+h1, h2, h3, .h1, .h2, .h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-green);
+    font-weight: 600;
+}
+.display-4 {
+    font-weight: 600;
+}
+.lead {
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+
+/* --- 3. RODAPÉ FIXO E ESTILIZADO --- */
+/* --- 3. RODAPÉ FIXO E ESTILIZADO --- */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--primary-green);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+    padding: 15px 0; /* Um padding vertical agradável */
+}
+
+.footer .navbar-nav {
+    display: flex;
+    /* PONTO CRÍTICO: Garante a direção horizontal em TODAS as telas */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* Ajusta o espaçamento para telas menores */
+    gap: 10px;
+}
+
+.footer .nav-link {
+    text-decoration: none !important;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    /* Reduz um pouco o tamanho da fonte para caber melhor no celular */
+    font-size: 1rem; 
+    text-transform: uppercase;
+    padding: 8px; /* Ajusta o padding para ser mais compacto */
+    border-radius: 5px;
+    position: relative;
+    transition: color 0.4s ease;
+}
+
+.footer .nav-link:hover {
+    color: var(--accent-green);
+}
+
+.footer .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; /* Ajusta a posição da linha */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-green);
+    transition: width 0.4s ease;
+}
+
+.footer .nav-link:hover::after {
+    width: 70%;
+}
+
+/* Garante que o body tenha espaço suficiente para o rodapé */
+body {
+    background-color: var(--background-color) !important;
+    color: var(--text-color);
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 100px; /* Espaço para o rodapé */
+}
+
+
+/* --- 4. PÁGINA INICIAL --- */
+.couple-photo {
+    max-width: 80%; 
+    height: auto; 
+    display: block; 
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: var(--subtle-shadow);
+}
+
+/* --- 5. ESTILO GERAL DOS CARDS --- */
+.card {
+    border: none !important;
+    border-radius: 15px !important;
+    box-shadow: var(--subtle-shadow);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    height: 100%;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* --- 6. CARD DE FOTO --- */
+.photo-card .card-img-top {
+    object-fit: cover;
+    height: 300px;
+    cursor: pointer;
+}
+
+/* --- 7. CARD DE MÚSICA --- */
+.music-card {
+    height: 180px;
+}
+.music-card .cover {
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+}
+.music-card .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+.music-card .info {
+    min-width: 0;
+}
+.music-card .info .title {
+    font-size: 1.4em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.music-card .info .artist {
+    color: #6c6c6c;
+}
+
+/* --- 8. CONTROLES DO PLAYER E BARRA DE PROGRESSO --- */
+.player-controls .btn {
+    background-color: var(--accent-green);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px; height: 40px;
+    font-size: 1em; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.player-controls .btn:hover {
+    color: white;
+    background-color: var(--primary-green);
+    transform: scale(1.1);
+}
+.lyrics-btn {
+    background-color: #f0f0f0 !important;
+    color: #555 !important;
+    border-radius: 5px !important;
+    width: auto !important; height: auto !important;
+    font-size: 0.8em !important;
+    padding: 5px 10px !important;
+}
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent-green);
+    border-radius: 4px;
+    transition: width 0.1s linear;
+}
+
+/* --- 9. CARROSSEL E RESPONSIVIDADE (VERSÃO FINAL CORRIGIDA) --- */
+
+.carousel {
+    padding: 0 20px;
+}
+.carousel-inner {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* PONTO CRÍTICO DA CORREÇÃO: */
+/* Escondemos todos os slides por padrão e só mostramos o ativo. */
+.carousel-item {
+    display: none; /* Esconde todos os slides */
+    transition-duration: 0.5s;
+}
+.carousel-item.active {
+    display: flex; /* Mostra APENAS o slide que está ativo */
+    justify-content: center; /* Centraliza o card dentro do slide ativo */
+}
+/* Fim da correção */
+
+.carousel-item .card {
+    height: 75vh;
+    margin: 0;
+    width: 90%;
+    flex-shrink: 0;
+}
+
+/* Estilos que já tínhamos, agora aplicados corretamente */
+.carousel-item .photo-card .card-img-top {
+    height: 100%;
+}
+.carousel-item .music-card {
+    flex-direction: column;
+}
+.carousel-item .music-card .cover {
+    height: 50%;
+    width: 100%;
+}
+.carousel-item .music-card .cover img {
+    border-radius: 15px 15px 0 0;
+}
+
+/* --- 10. SETAS DO CARROSSEL --- */
+.carousel-control-prev-icon, 
+.carousel-control-next-icon {
+    background-color: var(--accent-green);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color 0.3s ease;
+}
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: var(--primary-green);
+}
+.carousel-control-prev, 
+.carousel-control-next {
+    opacity: 0.9;
+    pointer-events: none; /* Ignora cliques na área grande */
+}
+.carousel-control-prev:hover, 
+.carousel-control-next:hover {
+    opacity: 1;
+}
+.carousel-control-prev-icon, 
+.carousel-control-next-icon {
+    pointer-events: auto; /* Reativa cliques apenas no ícone */
+}
+
+/* --- 11. MODAIS --- */
+.modal-backdrop.show {
+    opacity: 0.85 !important;
+}
+.modal-content {
+    background-color: var(--card-background);
+    border: none;
+}
+.modal-header, .modal-footer {
+    border: none;
+}
+.modal-dialog-scrollable .modal-body pre {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+.modal-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+    padding: 16px;
+    z-index: 1056;
+}
+.modal-nav-btn:hover {
+    color: #ccc;
+}
+.modal-nav-btn.prev { left: 15px; }
+.modal-nav-btn.next { right: 15px; }
+.modal-caption-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #ccc;
+    padding: 25px 15px;
+    font-size: 1.1em;
+    line-height: 1.5;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+/* --- 12. INDICADOR DE CARREGAMENTO (SPINNER) --- */
+
+.loading-spinner-wrapper {
+    padding: 50px 0;
+    transition: opacity 0.5s ease;
+}
+
+.content-wrapper {
+    transition: opacity 0.5s ease;
+}
